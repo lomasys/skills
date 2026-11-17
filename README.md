@@ -20,17 +20,67 @@ No te dan una lista de "posibles problemas": **lo comprueban en tu app, te lo de
 
 ## ⚡ Instalación
 
-Cada skill se instala **por separado**: instalas solo las que quieres.
+Cada skill se instala **por separado**: instalas solo las que quieres. Necesitas tener [Claude Code](https://code.claude.com) instalado.
 
-### Claude Code
+### Opción A: desde tu terminal (la más fácil)
 
-**1. Agrega este catálogo (solo la primera vez):**
+Abre **PowerShell, CMD o tu terminal** (no dentro de Claude) y copia esto. La primera línea agrega el catálogo (solo se hace una vez) y la segunda instala la skill:
+
+```bash
+claude plugin marketplace add lomasys/skills
+claude plugin install seguridad@lomasys-skills
+```
+
+¿Quieres **las 13 de una vez**?
+
+<details>
+<summary>PowerShell (Windows)</summary>
+
+```powershell
+claude plugin marketplace add lomasys/skills
+"seguridad","permisos","probar-bots","examen-de-bots","calidad","rendimiento","migraciones","base-miles-de-clientes","escalar","produccion","pantallas","mockup-vs-app","eficiencia-ia" | ForEach-Object { claude plugin install "$_@lomasys-skills" }
+```
+</details>
+
+<details>
+<summary>bash / zsh (Mac, Linux, Git Bash)</summary>
+
+```bash
+claude plugin marketplace add lomasys/skills
+for s in seguridad permisos probar-bots examen-de-bots calidad rendimiento migraciones base-miles-de-clientes escalar produccion pantallas mockup-vs-app eficiencia-ia; do claude plugin install "$s@lomasys-skills"; done
+```
+</details>
+
+Después abre Claude Code (o una conversación nueva en tu editor) y ya las puedes usar.
+
+### Opción B: dentro de Claude Code
+
+Abre Claude Code en la terminal (escribe `claude`) y escribe **un comando por mensaje**, esperando a que termine cada uno:
 
 ```text
 /plugin marketplace add lomasys/skills
 ```
+```text
+/plugin install seguridad@lomasys-skills
+```
+```text
+/reload-plugins
+```
 
-**2. Instala la skill que quieras:**
+> [!IMPORTANT]
+> Los comandos que empiezan con `/` solo funcionan **dentro de Claude Code en la terminal**. Si los escribes en PowerShell o en el chat de la extensión de tu editor, marcan error: usa la opción A.
+
+### Si algo sale mal
+
+| Ves esto | Qué pasó | Qué hacer |
+|---|---|---|
+| `'/plugin' no se reconoce como nombre de un cmdlet…` | Lo escribiste en PowerShell | Usa `claude plugin …` (sin la `/`), como en la opción A |
+| `/plugin isn't available in this environment` | Lo escribiste en el chat de la extensión del editor | Usa la opción A en una terminal |
+| `Marketplace "lomasys-skills" not found` | Te saltaste el primer paso | Corre primero `claude plugin marketplace add lomasys/skills` |
+| `… is not a valid GitHub owner/repo` | Pegaste dos comandos en una sola línea | Uno por línea; en el cuadro "Enter marketplace source" escribe solo `lomasys/skills` |
+| Instalada pero no aparece | Claude Code ya estaba abierto | `/reload-plugins` o abre una conversación nueva |
+
+### Las 13 skills
 
 | Skill | Instalar | Usar |
 |---|---|---|
@@ -50,10 +100,10 @@ Cada skill se instala **por separado**: instalas solo las que quieres.
 
 También puedes pedirlo con tus palabras: *"revisa la seguridad de este proyecto"*, *"documenta quién puede hacer qué"*, *"ataca mi chatbot a ver si suelta datos"*, *"hazle un examen a mi chatbot"*…
 
-¿Prefieres la terminal? Es lo mismo con `claude plugin marketplace add …` y `claude plugin install …`.
+En la terminal, cambia `/plugin install` por `claude plugin install`.
 
 > [!TIP]
-> Para ver todas las skills escribe `/plugin` y entra a **lomasys-skills**. Las actualizaciones te llegan con `/plugin marketplace update lomasys-skills`.
+> **Actualizar** a la última versión: `claude plugin marketplace update lomasys-skills`.
 
 ### Otras herramientas (Codex, Cursor, Copilot, Gemini…)
 
