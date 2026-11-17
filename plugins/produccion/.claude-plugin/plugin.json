@@ -1,0 +1,12 @@
+{
+  "name": "produccion",
+  "description": "Revisa cada despliegue antes de subirlo y da un semáforo, agrupa los errores de producción por causa e impacto, arma las alertas mínimas, escribe el post mortem y convierte lo terminado en novedades para clientes.",
+  "version": "1.0.0",
+  "author": {
+    "name": "lomasys"
+  },
+  "homepage": "https://github.com/lomasys/skills",
+  "repository": "https://github.com/lomasys/skills",
+  "license": "Apache-2.0",
+  "keywords": ["produccion", "deploy", "despliegue", "errores", "monitoreo", "postmortem", "release-notes", "espanol"]
+}

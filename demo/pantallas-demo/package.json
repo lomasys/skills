@@ -1,0 +1,9 @@
+{
+  "name": "pantallas-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "App de práctica con fallas de interfaz a propósito (contraste, etiquetas, textos sin traducir, estados olvidados), para probar la skill pantallas.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

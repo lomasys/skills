@@ -1,0 +1,11 @@
+{
+  "name": "tienda-migraciones",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Demo con migraciones peligrosas a propósito, para probar la skill migraciones.",
+  "scripts": {
+    "migrate": "node migrar.mjs",
+    "migrate:status": "node migrar.mjs --estado"
+  }
+}

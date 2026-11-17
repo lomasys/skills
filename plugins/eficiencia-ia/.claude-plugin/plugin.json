@@ -1,0 +1,12 @@
+{
+  "name": "eficiencia-ia",
+  "description": "Haz que tus agentes de IA de programación y la IA de tu producto gasten menos y avancen más: memoria del proyecto probada, tareas claras, modelo barato primero y ahorro medido.",
+  "version": "1.0.0",
+  "author": {
+    "name": "lomasys"
+  },
+  "homepage": "https://github.com/lomasys/skills",
+  "repository": "https://github.com/lomasys/skills",
+  "license": "Apache-2.0",
+  "keywords": ["agentes", "tokens", "costo", "agents-md", "llm", "prompts", "ahorro", "espanol"]
+}

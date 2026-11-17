@@ -1,0 +1,12 @@
+{
+  "name": "mockup-vs-app",
+  "description": "Compara tu mockup con la pantalla real en celular, tablet, escritorio y modo oscuro, y te da cada diferencia medida con su arreglo exacto.",
+  "version": "1.0.0",
+  "author": {
+    "name": "lomasys"
+  },
+  "homepage": "https://github.com/lomasys/skills",
+  "repository": "https://github.com/lomasys/skills",
+  "license": "Apache-2.0",
+  "keywords": ["mockup", "diseno", "figma", "pixel-perfect", "qa-visual", "css", "espanol"]
+}

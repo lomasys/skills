@@ -1,0 +1,50 @@
+[
+  {
+    "id": 101,
+    "texto": "Me cobraron dos veces este mes, quiero mi reembolso"
+  },
+  {
+    "id": 102,
+    "texto": "La app no carga desde ayer, sale un error en blanco"
+  },
+  {
+    "id": 103,
+    "texto": "No puedo entrar, olvidé mi contraseña"
+  },
+  {
+    "id": 104,
+    "texto": "¿Tienen descuento para escuelas?"
+  },
+  {
+    "id": 105,
+    "texto": "La factura salió con el nombre equivocado"
+  },
+  {
+    "id": 106,
+    "texto": "El tablero está muy lento con muchas tarjetas"
+  },
+  {
+    "id": 107,
+    "texto": "Mi compañero no tiene acceso al tablero de ventas"
+  },
+  {
+    "id": 108,
+    "texto": "¿Cómo exporto mis tarjetas a Excel?"
+  },
+  {
+    "id": 109,
+    "texto": "Me cobraron el plan Pro pero sigo en Gratis"
+  },
+  {
+    "id": 110,
+    "texto": "Sale una falla al subir adjuntos grandes"
+  },
+  {
+    "id": 111,
+    "texto": "No me llega el correo para cambiar la contraseña"
+  },
+  {
+    "id": 112,
+    "texto": "¿Se puede usar en el celular?"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "name": "escalar",
+  "description": "Prepara tu sistema para miles de clientes: mide en local qué truena primero, propone caché, colas y plan de caídas por prioridad y calcula cuánto cuesta cada cliente en servidores.",
+  "version": "1.0.0",
+  "author": {
+    "name": "lomasys"
+  },
+  "homepage": "https://github.com/lomasys/skills",
+  "repository": "https://github.com/lomasys/skills",
+  "license": "Apache-2.0",
+  "keywords": ["escalar", "prueba-de-carga", "cache", "redis", "colas", "resiliencia", "costos", "espanol"]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "migraciones",
+  "description": "Revisa tus migraciones antes de producción (pérdida de datos, bloqueos, reversa y código desplegado), diseña cambios sin caída y encuentra índices, reglas y datos huérfanos que le faltan a tu base, con un respaldo probado.",
+  "version": "1.0.0",
+  "author": {
+    "name": "lomasys"
+  },
+  "homepage": "https://github.com/lomasys/skills",
+  "repository": "https://github.com/lomasys/skills",
+  "license": "Apache-2.0",
+  "keywords": ["migraciones", "migrations", "base-de-datos", "postgres", "mysql", "zero-downtime", "indices", "respaldo", "espanol"]
+}

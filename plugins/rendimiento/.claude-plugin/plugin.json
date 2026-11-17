@@ -1,0 +1,12 @@
+{
+  "name": "rendimiento",
+  "description": "Encuentra por qué una pantalla o API está lenta (consultas repetidas, listas sin paginar, frontend pesado) y propone arreglos con su número antes y después.",
+  "version": "1.0.0",
+  "author": {
+    "name": "lomasys"
+  },
+  "homepage": "https://github.com/lomasys/skills",
+  "repository": "https://github.com/lomasys/skills",
+  "license": "Apache-2.0",
+  "keywords": ["rendimiento", "performance", "n+1", "paginacion", "frontend", "presupuesto", "espanol"]
+}

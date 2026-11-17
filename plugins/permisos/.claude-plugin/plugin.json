@@ -1,0 +1,12 @@
+{
+  "name": "permisos",
+  "description": "Documenta quién puede hacer qué en tu sistema con muchas cuentas, lo blinda con pruebas por rol y revisa el \"ver como\", la bitácora de auditoría y el borrado completo de un cliente.",
+  "version": "1.0.0",
+  "author": {
+    "name": "lomasys"
+  },
+  "homepage": "https://github.com/lomasys/skills",
+  "repository": "https://github.com/lomasys/skills",
+  "license": "Apache-2.0",
+  "keywords": ["permisos", "roles", "rbac", "multi-tenant", "auditoria", "impersonation", "borrado", "gdpr", "espanol"]
+}

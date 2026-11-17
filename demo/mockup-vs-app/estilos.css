@@ -1,0 +1,27 @@
+:root {
+  --fondo: #f3f4f6; --tarjeta: #ffffff; --texto: #111827; --suave: #6b7280;
+  --borde: #d1d5db; --primario: #3b82f6; --primario-texto: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --fondo: #0b1120; --tarjeta: #111827; --texto: #f9fafb; --borde: #374151; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--fondo); color: var(--texto); }
+.encabezado { display: flex; align-items: center; gap: 8px; padding: 16px 24px; font-weight: 700; font-size: 18px; }
+.logo { width: 28px; height: 28px; border-radius: 8px; background: var(--primario); }
+main { display: flex; justify-content: center; padding: 32px 16px; }
+.tarjeta { width: 100%; max-width: 420px; background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 16px; padding: 24px; }
+.titulo { margin: 0 0 8px; font-size: 24px; line-height: 1.2; font-weight: 700; }
+.subtitulo { margin: 0 0 24px; color: var(--suave); font-size: 16px; line-height: 1.5; }
+label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.campo { width: 100%; height: 44px; padding: 0 12px; border: 1px solid var(--borde); border-radius: 10px; font-size: 16px; background: transparent; color: inherit; margin-bottom: 16px; }
+.boton { width: 100%; height: 40px; border: 0; border-radius: 10px; background: var(--primario); color: var(--primario-texto); font-size: 16px; font-weight: 600; cursor: pointer; }
+.pie { margin: 20px 0 0; text-align: center; font-size: 14px; color: var(--suave); }
+.pie a { color: var(--primario); font-weight: 600; text-decoration: none; }
+.beneficios { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 8px; font-size: 14px; color: var(--suave); }
+.beneficios li::before { content: "✓ "; color: var(--primario); font-weight: 700; }
+
+/* En celular la tarjeta se veía "muy llena" y alguien escondió el enlace de iniciar sesión. */
+@media (max-width: 480px) {
+  .pie { display: none; }
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Permisos Demo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; }
+    button { margin: .25rem; }
+    .oculto { display: none; }
+  </style>
+</head>
+<body>
+  <h1>Documentos</h1>
+  <p id="saludo"></p>
+
+  <!-- Botones según el rol. Admin: todo. Editor: crear y editar. Lector: solo ver. -->
+  <div>
+    <button data-roles="admin editor" onclick="nuevo()">Nuevo documento</button>
+    <button data-roles="admin" onclick="exportar()">Exportar todo</button>
+    <button data-roles="admin" onclick="cambiarRol()">Cambiar rol de un usuario</button>
+    <button data-roles="admin" onclick="verComo()">Ver como otro usuario</button>
+    <button data-roles="admin" onclick="verAuditoria()">Bitácora</button>
+    <button data-roles="admin" onclick="borrarCuenta()">Borrar la cuenta de la empresa</button>
+  </div>
+  <ul id="lista"></ul>
+
+  <script>
+    let yo = null;
+    async function api(metodo, ruta, cuerpo) {
+      const r = await fetch(ruta, { method: metodo, body: cuerpo && JSON.stringify(cuerpo) });
+      return r.json();
+    }
+    async function iniciar() {
+      yo = await api('GET', '/api/yo');
+      document.getElementById('saludo').textContent = `Hola, ${yo.nombre} (${yo.rol})`;
+      document.querySelectorAll('[data-roles]').forEach(b => {
+        if (!b.dataset.roles.split(' ').includes(yo.rol)) b.classList.add('oculto');
+      });
+      const docs = await api('GET', '/api/documentos');
+      document.getElementById('lista').innerHTML = docs.map(d =>
+        `<li>${d.titulo} ${yo.rol === 'admin' ? `<button onclick="borrar(${d.id})">Borrar</button>` : ''}</li>`).join('');
+    }
+    async function nuevo() { await api('POST', '/api/documentos', { titulo: prompt('Título') }); iniciar(); }
+    async function borrar(id) { await api('DELETE', `/api/documentos/${id}`); iniciar(); }
+    async function exportar() { console.log(await api('GET', '/api/documentos/exportar')); }
+    async function cambiarRol() { await api('PATCH', `/api/usuarios/${prompt('Id del usuario')}/rol`, { rol: prompt('admin, editor o lector') }); }
+    async function verComo() { await api('POST', `/api/ver-como/${prompt('Id del usuario')}`); iniciar(); }
+    async function verAuditoria() { console.log(await api('GET', '/api/auditoria')); }
+    async function borrarCuenta() { if (confirm('¿Seguro?')) await api('DELETE', '/api/cuenta'); }
+    iniciar();
+  </script>
+</body>
+</html>

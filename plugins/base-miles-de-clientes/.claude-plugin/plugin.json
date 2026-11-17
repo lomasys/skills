@@ -1,0 +1,12 @@
+{
+  "name": "base-miles-de-clientes",
+  "description": "Mide si tu base de datos ya necesita copias de lectura, arma una principal y sus réplicas, encuentra en tu código las lecturas que fallarían por el retraso y lo prueba en Docker local.",
+  "version": "1.0.0",
+  "author": {
+    "name": "lomasys"
+  },
+  "homepage": "https://github.com/lomasys/skills",
+  "repository": "https://github.com/lomasys/skills",
+  "license": "Apache-2.0",
+  "keywords": ["base-de-datos", "replicas", "read-replicas", "postgres", "mysql", "escalar", "espanol"]
+}

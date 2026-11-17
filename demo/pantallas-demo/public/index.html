@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiendita · Clientes</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="barra">
+    <img src="logo.svg" class="logo">
+    <h1 data-t="dashboard.title"></h1>
+    <nav><a href="pedidos.html" data-t="menu.pedidos"></a></nav>
+    <button class="icono" id="btn-config">
+      <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="2"/></svg>
+    </button>
+  </header>
+
+  <main>
+    <p class="ayuda">Aquí ves a todos tus clientes activos.</p>
+    <div class="buscador">
+      <input id="buscar" type="search" placeholder="Buscar cliente">
+      <button id="btn-nuevo" class="boton-guardar">+ Nuevo</button>
+    </div>
+    <p id="contador" class="fecha"></p>
+    <ul id="lista-clientes" class="lista"></ul>
+    <div class="acciones">
+      <div class="boton-falso" onclick="window.exportar()">Exportar a Excel</div>
+    </div>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="caja">
+      <span class="cerrar" onclick="window.cerrarModal()">×</span>
+      <h2 data-t="clientes.nuevo"></h2>
+      <label>Nombre</label>
+      <input id="nombre">
+      <input id="correo" type="email" placeholder="Correo electrónico">
+      <div id="botones-modal"></div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

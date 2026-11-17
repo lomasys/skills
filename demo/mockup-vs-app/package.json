@@ -1,0 +1,9 @@
+{
+  "name": "mockup-vs-app-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pantalla de práctica con diferencias a propósito contra su mockup, para probar la skill mockup-vs-app.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

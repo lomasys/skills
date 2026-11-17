@@ -1,0 +1,12 @@
+{
+  "name": "calidad",
+  "description": "Antes de tocar algo te dice qué rompes, reproduce cada bug con una prueba, detecta pruebas que no prueban nada o fallan al azar y encuentra código muerto con evidencia.",
+  "version": "1.0.0",
+  "author": {
+    "name": "lomasys"
+  },
+  "homepage": "https://github.com/lomasys/skills",
+  "repository": "https://github.com/lomasys/skills",
+  "license": "Apache-2.0",
+  "keywords": ["calidad", "pruebas", "testing", "impacto", "flaky", "codigo-muerto", "mutacion", "refactor", "espanol"]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "probar-bots",
+  "description": "Ataca tu chatbot o agente de IA en tu máquina (inyección de prompt, fugas entre clientes, herramientas y permisos) y te da cada hallazgo con la conversación exacta y el arreglo en el código.",
+  "version": "1.0.0",
+  "author": {
+    "name": "lomasys"
+  },
+  "homepage": "https://github.com/lomasys/skills",
+  "repository": "https://github.com/lomasys/skills",
+  "license": "Apache-2.0",
+  "keywords": ["chatbot", "agentes", "prompt-injection", "jailbreak", "llm", "owasp", "seguridad", "espanol"]
+}

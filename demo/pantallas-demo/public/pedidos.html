@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiendita · Pedidos</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="barra">
+    <a href="index.html" class="volver" aria-label="Volver a clientes">←</a>
+    <h1 data-t="pedidos.titulo"></h1>
+  </header>
+
+  <main>
+    <table class="tabla">
+      <thead><tr><th data-t="pedidos.folio"></th><th data-t="pedidos.cliente"></th><th>Total</th></tr></thead>
+      <tbody id="filas"></tbody>
+    </table>
+    <p id="sin-pedidos" class="vacio" hidden data-t="pedidos.vacio"></p>
+    <div id="botones"></div>
+  </main>
+
+  <script type="module" src="pedidos.js"></script>
+</body>
+</html>

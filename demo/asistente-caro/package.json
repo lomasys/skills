@@ -1,0 +1,9 @@
+{
+  "name": "asistente-caro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Asistente de tickets con gastos de IA a propósito, para probar la skill eficiencia-ia. Usa una IA simulada: sin claves ni internet.",
+  "scripts": {
+    "start": "node tickets.js"
+  }
+}

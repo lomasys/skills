@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup · Crear cuenta</title>
+<!-- Mockup aprobado por diseño. La pantalla real (pagina.html) debería verse igual. -->
+<style>
+  :root {
+    --fondo: #f3f4f6; --tarjeta: #ffffff; --texto: #111827; --suave: #6b7280;
+    --borde: #d1d5db; --primario: #2563eb; --primario-texto: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --fondo: #0b1120; --tarjeta: #111827; --texto: #f9fafb; --suave: #9ca3af; --borde: #374151; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--fondo); color: var(--texto); }
+  .encabezado { display: flex; align-items: center; gap: 8px; padding: 16px 24px; font-weight: 700; font-size: 18px; }
+  .logo { width: 28px; height: 28px; border-radius: 8px; background: var(--primario); }
+  main { display: flex; justify-content: center; padding: 32px 16px; }
+  .tarjeta { width: 100%; max-width: 420px; background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 16px; padding: 32px; }
+  .titulo { margin: 0 0 8px; font-size: 28px; line-height: 1.2; font-weight: 700; }
+  .subtitulo { margin: 0 0 24px; color: var(--suave); font-size: 16px; line-height: 1.5; }
+  label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+  .campo { width: 100%; height: 44px; padding: 0 12px; border: 1px solid var(--borde); border-radius: 10px; font-size: 16px; background: transparent; color: inherit; margin-bottom: 16px; }
+  .boton { width: 100%; height: 48px; border: 0; border-radius: 10px; background: var(--primario); color: var(--primario-texto); font-size: 16px; font-weight: 600; cursor: pointer; }
+  .pie { margin: 20px 0 0; text-align: center; font-size: 14px; color: var(--suave); }
+  .pie a { color: var(--primario); font-weight: 600; text-decoration: none; }
+  .beneficios { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 8px; font-size: 14px; color: var(--suave); }
+  .beneficios li::before { content: "✓ "; color: var(--primario); font-weight: 700; }
+</style>
+</head>
+<body>
+  <header class="encabezado"><span class="logo"></span>Tablerito</header>
+  <main>
+    <section class="tarjeta">
+      <h1 class="titulo">Crea tu cuenta</h1>
+      <p class="subtitulo">Organiza a tu equipo en minutos. Sin tarjeta de crédito.</p>
+      <form>
+        <label for="correo">Correo de trabajo</label>
+        <input id="correo" class="campo" type="email" placeholder="tu@empresa.com">
+        <label for="clave">Contraseña</label>
+        <input id="clave" class="campo" type="password" placeholder="Mínimo 8 caracteres">
+        <button class="boton" type="submit">Crear cuenta gratis</button>
+      </form>
+      <ul class="beneficios">
+        <li>Tableros ilimitados</li>
+        <li>Hasta 5 personas gratis</li>
+      </ul>
+      <p class="pie">¿Ya tienes cuenta? <a href="#">Inicia sesión</a></p>
+    </section>
+  </main>
+</body>
+</html>

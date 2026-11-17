@@ -1,6 +1,6 @@
 {
   "name": "lomasys-skills",
-  "description": "Skills abiertas para desarrolladores: comprueban en lugar de adivinar. Cada skill se instala por separado.",
+  "description": "Skills abiertas para desarrolladores: comprueban en lugar de adivinar. 13 skills; cada una se instala por separado.",
   "owner": {
     "name": "lomasys"
   },
@@ -11,7 +11,50 @@
       "description": "Encuentra hoyos de seguridad, los comprueba contra tu app local, deja una prueba por cada uno y marca los controles de SOC 2 / ISO 27001 / ISO 27701.",
       "version": "1.0.0",
       "category": "security",
-      "keywords": ["seguridad", "security", "multi-tenant", "soc2", "iso27001", "pentest", "espanol"]
+      "keywords": [
+        "seguridad",
+        "security",
+        "multi-tenant",
+        "soc2",
+        "iso27001",
+        "pentest",
+        "espanol"
+      ]
+    },
+    {
+      "name": "permisos",
+      "source": "./plugins/permisos",
+      "description": "Documenta quién puede hacer qué en tu sistema con muchas cuentas, lo blinda con pruebas por rol y revisa el \"ver como\", la bitácora de auditoría y el borrado completo de un cliente.",
+      "version": "1.0.0",
+      "category": "security",
+      "keywords": [
+        "permisos",
+        "roles",
+        "rbac",
+        "multi-tenant",
+        "auditoria",
+        "impersonation",
+        "borrado",
+        "gdpr",
+        "espanol"
+      ]
+    },
+    {
+      "name": "probar-bots",
+      "source": "./plugins/probar-bots",
+      "description": "Ataca tu chatbot o agente de IA en tu máquina (inyección de prompt, fugas entre clientes, herramientas y permisos) y te da cada hallazgo con la conversación exacta y el arreglo en el código.",
+      "version": "1.0.0",
+      "category": "security",
+      "keywords": [
+        "chatbot",
+        "agentes",
+        "prompt-injection",
+        "jailbreak",
+        "llm",
+        "owasp",
+        "seguridad",
+        "espanol"
+      ]
     },
     {
       "name": "examen-de-bots",
@@ -19,7 +62,169 @@
       "description": "Le hace a tu chatbot un examen con preguntas reales, lo califica con un número y te avisa si empeora al cambiar el prompt, el modelo o su información.",
       "version": "1.0.0",
       "category": "testing",
-      "keywords": ["chatbot", "evals", "examen", "alucinaciones", "llm", "regresion", "espanol"]
+      "keywords": [
+        "chatbot",
+        "evals",
+        "examen",
+        "alucinaciones",
+        "llm",
+        "regresion",
+        "espanol"
+      ]
+    },
+    {
+      "name": "calidad",
+      "source": "./plugins/calidad",
+      "description": "Antes de tocar algo te dice qué rompes, reproduce cada bug con una prueba, detecta pruebas que no prueban nada o fallan al azar y encuentra código muerto con evidencia.",
+      "version": "1.0.0",
+      "category": "testing",
+      "keywords": [
+        "calidad",
+        "pruebas",
+        "testing",
+        "impacto",
+        "flaky",
+        "codigo-muerto",
+        "mutacion",
+        "refactor",
+        "espanol"
+      ]
+    },
+    {
+      "name": "rendimiento",
+      "source": "./plugins/rendimiento",
+      "description": "Encuentra por qué una pantalla o API está lenta (consultas repetidas, listas sin paginar, frontend pesado) y propone arreglos con su número antes y después.",
+      "version": "1.0.0",
+      "category": "development",
+      "keywords": [
+        "rendimiento",
+        "performance",
+        "n+1",
+        "paginacion",
+        "frontend",
+        "presupuesto",
+        "espanol"
+      ]
+    },
+    {
+      "name": "migraciones",
+      "source": "./plugins/migraciones",
+      "description": "Revisa tus migraciones antes de producción (pérdida de datos, bloqueos, reversa y código desplegado), diseña cambios sin caída y encuentra índices, reglas y datos huérfanos que le faltan a tu base, con un respaldo probado.",
+      "version": "1.0.0",
+      "category": "database",
+      "keywords": [
+        "migraciones",
+        "migrations",
+        "base-de-datos",
+        "postgres",
+        "mysql",
+        "zero-downtime",
+        "indices",
+        "respaldo",
+        "espanol"
+      ]
+    },
+    {
+      "name": "base-miles-de-clientes",
+      "source": "./plugins/base-miles-de-clientes",
+      "description": "Mide si tu base de datos ya necesita copias de lectura, arma una principal y sus réplicas, encuentra en tu código las lecturas que fallarían por el retraso y lo prueba en Docker local.",
+      "version": "1.0.0",
+      "category": "database",
+      "keywords": [
+        "base-de-datos",
+        "replicas",
+        "read-replicas",
+        "postgres",
+        "mysql",
+        "escalar",
+        "espanol"
+      ]
+    },
+    {
+      "name": "escalar",
+      "source": "./plugins/escalar",
+      "description": "Prepara tu sistema para miles de clientes: mide en local qué truena primero, propone caché, colas y plan de caídas por prioridad y calcula cuánto cuesta cada cliente en servidores.",
+      "version": "1.0.0",
+      "category": "development",
+      "keywords": [
+        "escalar",
+        "prueba-de-carga",
+        "cache",
+        "redis",
+        "colas",
+        "resiliencia",
+        "costos",
+        "espanol"
+      ]
+    },
+    {
+      "name": "produccion",
+      "source": "./plugins/produccion",
+      "description": "Revisa cada despliegue antes de subirlo y da un semáforo, agrupa los errores de producción por causa e impacto, arma las alertas mínimas, escribe el post mortem y convierte lo terminado en novedades para clientes.",
+      "version": "1.0.0",
+      "category": "devops",
+      "keywords": [
+        "produccion",
+        "deploy",
+        "despliegue",
+        "errores",
+        "monitoreo",
+        "postmortem",
+        "release-notes",
+        "espanol"
+      ]
+    },
+    {
+      "name": "pantallas",
+      "source": "./plugins/pantallas",
+      "description": "Revisa la calidad de tus pantallas: accesibilidad con el contraste WCAG calculado, textos sin traducir y llaves crudas, estados vacío/cargando/error/sin permiso y componentes repetidos, cada propuesta con archivo, línea y el cambio exacto.",
+      "version": "1.0.0",
+      "category": "frontend",
+      "keywords": [
+        "ui",
+        "accesibilidad",
+        "a11y",
+        "wcag",
+        "contraste",
+        "i18n",
+        "traducciones",
+        "estados",
+        "componentes",
+        "espanol"
+      ]
+    },
+    {
+      "name": "mockup-vs-app",
+      "source": "./plugins/mockup-vs-app",
+      "description": "Compara tu mockup con la pantalla real en celular, tablet, escritorio y modo oscuro, y te da cada diferencia medida con su arreglo exacto.",
+      "version": "1.0.0",
+      "category": "frontend",
+      "keywords": [
+        "mockup",
+        "diseno",
+        "figma",
+        "pixel-perfect",
+        "qa-visual",
+        "css",
+        "espanol"
+      ]
+    },
+    {
+      "name": "eficiencia-ia",
+      "source": "./plugins/eficiencia-ia",
+      "description": "Haz que tus agentes de IA de programación y la IA de tu producto gasten menos y avancen más: memoria del proyecto probada, tareas claras, modelo barato primero y ahorro medido.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": [
+        "agentes",
+        "tokens",
+        "costo",
+        "agents-md",
+        "llm",
+        "prompts",
+        "ahorro",
+        "espanol"
+      ]
     }
   ]
 }

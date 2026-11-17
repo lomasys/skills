@@ -1,0 +1,12 @@
+{
+  "name": "pantallas",
+  "description": "Revisa la calidad de tus pantallas: accesibilidad con el contraste WCAG calculado, textos sin traducir y llaves crudas, estados vacío/cargando/error/sin permiso y componentes repetidos, cada propuesta con archivo, línea y el cambio exacto.",
+  "version": "1.0.0",
+  "author": {
+    "name": "lomasys"
+  },
+  "homepage": "https://github.com/lomasys/skills",
+  "repository": "https://github.com/lomasys/skills",
+  "license": "Apache-2.0",
+  "keywords": ["ui", "accesibilidad", "a11y", "wcag", "contraste", "i18n", "traducciones", "estados", "componentes", "espanol"]
+}

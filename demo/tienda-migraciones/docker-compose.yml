@@ -1,0 +1,14 @@
+# Base local de la demo. Opcional: la revisión de migraciones funciona sin ella.
+# docker compose up -d   → Postgres 16 en 127.0.0.1:${PUERTO_DB:-54329}, usuario/clave/base: tienda
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: tienda
+      POSTGRES_PASSWORD: tienda
+      POSTGRES_DB: tienda
+    ports:
+      - "127.0.0.1:${PUERTO_DB:-54329}:5432"
+    volumes:
+      - ./db:/demo:ro
+      - ./db/iniciar.sql:/docker-entrypoint-initdb.d/iniciar.sql:ro

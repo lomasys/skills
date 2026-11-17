@@ -1,0 +1,21 @@
+{
+  "dashboard": {
+    "title": "Customers"
+  },
+  "menu": {
+    "pedidos": "Orders"
+  },
+  "clientes": {
+    "nuevo": "New customer"
+  },
+  "acciones": {
+    "guardar": "Save",
+    "cancelar": "Cancel"
+  },
+  "pedidos": {
+    "titulo": "Orders",
+    "folio": "Order #",
+    "cliente": "Customer",
+    "vacio": "No orders yet"
+  }
+}

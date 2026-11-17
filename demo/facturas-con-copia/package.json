@@ -1,0 +1,10 @@
+{
+  "name": "facturas-con-copia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SaaS de facturación de práctica con una base principal y una copia con retraso, y errores a propósito, para probar la skill base-miles-de-clientes.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}

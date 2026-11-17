@@ -1,0 +1,9 @@
+{
+  "name": "api-sin-escalar",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API de práctica con problemas para crecer a propósito, para probar la skill escalar. No la publiques.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

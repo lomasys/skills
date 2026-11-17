@@ -1,0 +1,19 @@
+{
+  "menu": {
+    "pedidos": "Pedidos"
+  },
+  "clientes": {
+    "nuevo": "Nuevo cliente",
+    "vacio": "Todavía no tienes clientes"
+  },
+  "acciones": {
+    "guardar": "Guardar",
+    "cancelar": "Cancel"
+  },
+  "pedidos": {
+    "titulo": "Pedidos",
+    "folio": "Folio",
+    "cliente": "Cliente",
+    "vacio": "No hay pedidos todavía"
+  }
+}

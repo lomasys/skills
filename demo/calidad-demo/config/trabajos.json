@@ -1,0 +1,3 @@
+[
+  { "nombre": "cierre-diario", "modulo": "cierre", "calculo": "calcularTotal", "cada": "24h" }
+]
