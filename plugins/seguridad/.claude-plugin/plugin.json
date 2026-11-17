@@ -1,0 +1,12 @@
+{
+  "name": "seguridad",
+  "description": "Encuentra hoyos de seguridad, los comprueba contra tu app local, deja una prueba por cada uno y marca los controles de SOC 2 / ISO 27001 / ISO 27701.",
+  "version": "1.0.0",
+  "author": {
+    "name": "lomasys"
+  },
+  "homepage": "https://github.com/lomasys/skills",
+  "repository": "https://github.com/lomasys/skills",
+  "license": "Apache-2.0",
+  "keywords": ["seguridad", "security", "multi-tenant", "soc2", "iso27001", "espanol"]
+}

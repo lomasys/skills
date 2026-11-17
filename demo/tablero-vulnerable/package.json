@@ -1,0 +1,10 @@
+{
+  "name": "tablero-vulnerable",
+  "version": "1.0.0",
+  "private": true,
+  "description": "App de demostración con hoyos de seguridad a propósito, para probar la skill seguridad. No la publiques.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}

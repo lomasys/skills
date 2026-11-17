@@ -1,0 +1,17 @@
+{
+  "name": "lomasys-skills",
+  "description": "Skills abiertas para desarrolladores: comprueban en lugar de adivinar. Cada skill se instala por separado.",
+  "owner": {
+    "name": "lomasys"
+  },
+  "plugins": [
+    {
+      "name": "seguridad",
+      "source": "./plugins/seguridad",
+      "description": "Encuentra hoyos de seguridad, los comprueba contra tu app local, deja una prueba por cada uno y marca los controles de SOC 2 / ISO 27001 / ISO 27701.",
+      "version": "1.0.0",
+      "category": "security",
+      "keywords": ["seguridad", "security", "multi-tenant", "soc2", "iso27001", "pentest", "espanol"]
+    }
+  ]
+}
