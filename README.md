@@ -2,6 +2,8 @@
 
 <img src="assets/banner.png" alt="lomasys Skills: skills que comprueban en lugar de adivinar" width="100%">
 
+[English](README.en.md) | **Español**
+
 <br>
 
 [![Licencia](https://img.shields.io/badge/licencia-Apache%202.0-2781F6?style=for-the-badge)](LICENSE)
