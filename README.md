@@ -12,7 +12,7 @@
 **Skills para desarrolladores que entregan software en serio.**
 No te dan una lista de "posibles problemas": **lo comprueban en tu app, te lo demuestran y dejan una prueba para que no regrese.**
 
-[Instalar](#-instalación) · [Skills](#-índice-de-skills) · [Pruébala en 2 minutos](#-pruébala-en-2-minutos) · [Cómo funciona](#-cómo-funciona-seguridad) · [Preguntas](#-preguntas-frecuentes)
+[Instalar](#-instalación) · [Skills](#-índice-de-skills) · [Pruébalas en 2 minutos](#-pruébalas-en-2-minutos) · [Seguridad](#️-cómo-funciona-seguridad) · [Examen de bots](#-cómo-funciona-examen-de-bots) · [Preguntas](#-preguntas-frecuentes)
 
 </div>
 
@@ -32,11 +32,12 @@ Cada skill se instala **por separado**: instalas solo las que quieres.
 
 **2. Instala la skill que quieras:**
 
-```text
-/plugin install seguridad@lomasys-skills
-```
+| Skill | Instalar | Usar |
+|---|---|---|
+| 🛡️ Seguridad | `/plugin install seguridad@lomasys-skills` | `/seguridad:seguridad` |
+| 🤖 Examen de bots | `/plugin install examen-de-bots@lomasys-skills` | `/examen-de-bots:examen-de-bots` |
 
-Listo. Abre cualquier proyecto y escribe `/seguridad:seguridad`, o pídelo con tus palabras: *"revisa la seguridad de este proyecto"*.
+También puedes pedirlo con tus palabras: *"revisa la seguridad de este proyecto"*, *"hazle un examen a mi chatbot"*.
 
 ¿Prefieres la terminal? Es lo mismo con `claude plugin marketplace add …` y `claude plugin install …`.
 
@@ -49,6 +50,7 @@ Un comando por skill. Detecta qué herramientas tienes y te pregunta dónde inst
 
 ```bash
 npx skills add lomasys/skills --skill seguridad
+npx skills add lomasys/skills --skill examen-de-bots
 ```
 
 ### A mano
@@ -57,12 +59,12 @@ npx skills add lomasys/skills --skill seguridad
 git clone https://github.com/lomasys/skills.git
 ```
 
-Copia la carpeta `plugins/seguridad/skills/seguridad` a la carpeta de skills de tu herramienta:
+Copia la carpeta de la skill (por ejemplo `plugins/seguridad/skills/seguridad`) a la carpeta de skills de tu herramienta:
 
 | Herramienta | Para ti (todos tus proyectos) | Solo para un proyecto (y tu equipo) |
 |---|---|---|
-| Claude Code | `~/.claude/skills/seguridad/` | `.claude/skills/seguridad/` |
-| Codex, Copilot CLI, Gemini CLI | `~/.agents/skills/seguridad/` | `.agents/skills/seguridad/` |
+| Claude Code | `~/.claude/skills/<skill>/` | `.claude/skills/<skill>/` |
+| Codex, Copilot CLI, Gemini CLI | `~/.agents/skills/<skill>/` | `.agents/skills/<skill>/` |
 
 ---
 
@@ -71,7 +73,7 @@ Copia la carpeta `plugins/seguridad/skills/seguridad` a la carpeta de skills de 
 | | Skill | Qué resuelve | Estado |
 |---|---|---|---|
 | 🛡️ | [**Seguridad**](plugins/seguridad/skills/seguridad/SKILL.md) | Encuentra hoyos de seguridad, **los comprueba atacando tu app en tu máquina**, deja una prueba que evita que regresen y marca qué control de SOC 2 / ISO 27001 toca cada uno. | ✅ Lista |
-| 🤖 | Examen de bots | Pone a prueba tus chatbots y agentes de IA: inyección de instrucciones, fugas de datos, respuestas inventadas. | 🔜 Pronto |
+| 🤖 | [**Examen de bots**](plugins/examen-de-bots/skills/examen-de-bots/SKILL.md) | Le hace a tu chatbot un examen con preguntas reales, **lo califica con un número** y te avisa si empeora al cambiar el prompt, el modelo o su información. | ✅ Lista |
 | 🗄️ | Base para miles de clientes | Una base de datos para escribir y varias para leer, paso a paso, sin que el sistema se trabe. | 🔜 Pronto |
 | 🎨 | Mockup contra pantalla | Compara tu diseño con la pantalla real y marca cada diferencia. | 🔜 Pronto |
 
@@ -132,23 +134,71 @@ También puedes pedirlo con tus palabras: *"revisa si un cliente puede ver datos
 
 ---
 
-## 🧪 Pruébala en 2 minutos
+## 🤖 Cómo funciona: Examen de bots
 
-Este repositorio trae [**Tablero Vulnerable**](demo/tablero-vulnerable), una mini app con hoyos **puestos a propósito**. No necesita instalar nada, solo Node 18 o más nuevo.
+### Qué la hace distinta
+
+| Lo que pasa hoy | El problema | Lo que hace esta skill |
+|---|---|---|
+| Pruebas el bot "a mano" con 5 preguntas | No sabes si mejoró o empeoró después de cambiar algo | **Examen fijo con calificación**: 87/100 hoy, 91/100 mañana |
+| Le pides a la IA que "revise el bot" | Arma un examen distinto cada vez; no se puede comparar | **Siempre la misma herramienta** y el mismo formato: cualquier corrida se compara con la anterior |
+| Calificar buscando palabras | Una respuesta mala puede contener la palabra correcta | **Datos con patrones, conductas con juicio**: escalar, tono y negarse los califica el agente con un criterio |
+| El bot dice "no tengo esa información" a todo | Parece que nunca inventa | **Detecta respuestas comodín** y no las cuenta como aciertos |
+| La respuesta "correcta" sale de lo que ya dice el bot | El examen aprueba los errores | **La respuesta correcta sale de tu información real**: precios, políticas, funciones |
+
+### Qué califica
+
+| Categoría | Pregunta |
+|---|---|
+| Datos | ¿Contesta bien precios, plazos, horarios y cómo se hace algo? |
+| No inventar | ¿Inventa funciones, precios o promesas que no existen? |
+| Pasar a humano | ¿Pasa con una persona cuando se lo piden o el cliente está molesto? |
+| Fuera de tema | ¿Se mantiene en su papel? |
+| Seguridad básica | ¿Suelta su prompt con un truco simple? |
+| Tono | ¿Habla como tu empresa? |
+| Robustez | ¿Entiende faltas de ortografía, mensajes sin acentos o en otro idioma? |
+
+### Cómo se usa
+
+| Escribes | Hace |
+|---|---|
+| `/examen-de-bots:examen-de-bots` | Arma el examen con tu información real, lo corre y te da la calificación |
+| `/examen-de-bots:examen-de-bots comparar` | Lo corre otra vez y te dice **qué empeoró** desde la última vez |
+| `/examen-de-bots:examen-de-bots modelos` | Compara varios modelos o prompts: calificación, velocidad y costo |
+
+El examen queda en tu proyecto (`examen-bot/`), así que también lo puedes correr en CI, sin IA:
+
+```bash
+node examen.mjs correr --casos examen-bot/casos.json --url http://localhost:3000/chat --repeticiones 3
+node examen.mjs comparar examen-bot/resultados/antes.json examen-bot/resultados/despues.json
+```
+
+`comparar` termina con error si empeoró algún caso crítico, para que tu CI lo detenga.
+
+### Lo que nunca hace
+
+- **Nunca examina tu bot de producción sin preguntarte.** Una pregunta como "quiero hablar con una persona" puede abrir un ticket real.
+- **Te avisa del costo** antes de hacer muchas preguntas a un modelo de pago.
+- **Nunca cambia tu bot.** Te propone cambios al prompt y tú decides.
+
+---
+
+## 🧪 Pruébalas en 2 minutos
+
+Este repositorio trae dos apps de práctica, con fallas **puestas a propósito**. No necesitan instalar nada, solo Node 18 o más nuevo.
+
+| App | Para probar | Fallas escondidas |
+|---|---|---|
+| [**Tablero Vulnerable**](demo/tablero-vulnerable) | `/seguridad:seguridad` | 10+ hoyos de seguridad |
+| [**Bot de Soporte**](demo/bot-de-soporte) | `/examen-de-bots:examen-de-bots` | inventa precios, se equivoca de política, no pasa con humanos |
 
 ```bash
 git clone https://github.com/lomasys/skills.git
-cd skills/demo/tablero-vulnerable
+cd skills/demo/tablero-vulnerable     # o demo/bot-de-soporte
 claude
 ```
 
-Y dentro de Claude Code:
-
-```text
-/seguridad:seguridad
-```
-
-Vas a ver cómo encuentra los hoyos, los comprueba uno por uno y escribe las pruebas.
+Y dentro de Claude Code escribe el comando de la skill.
 
 > [!CAUTION]
 > Tablero Vulnerable es inseguro a propósito. Solo escucha en `127.0.0.1`. No la subas a ningún servidor.
@@ -162,13 +212,19 @@ skills/
 ├── .claude-plugin/
 │   └── marketplace.json        ← catálogo: una entrada por skill
 ├── plugins/
-│   └── seguridad/              ← cada skill es su propio plugin
-│       ├── .claude-plugin/plugin.json
-│       └── skills/seguridad/
-│           ├── SKILL.md        ← las instrucciones de la skill
-│           └── referencias/    ← cómo atacar cada tipo de hoyo, reglas SOC 2 / ISO
+│   ├── seguridad/              ← cada skill es su propio plugin
+│   │   ├── .claude-plugin/plugin.json
+│   │   └── skills/seguridad/
+│   │       ├── SKILL.md        ← las instrucciones de la skill
+│   │       └── referencias/    ← cómo atacar cada tipo de hoyo, reglas SOC 2 / ISO
+│   └── examen-de-bots/
+│       └── skills/examen-de-bots/
+│           ├── SKILL.md
+│           ├── scripts/examen.mjs   ← corre, califica y compara exámenes (sin dependencias)
+│           └── referencias/         ← cómo escribir buenos casos
 ├── demo/
-│   └── tablero-vulnerable/     ← app de práctica con hoyos a propósito
+│   ├── tablero-vulnerable/     ← app con hoyos de seguridad a propósito
+│   └── bot-de-soporte/         ← chatbot con fallas a propósito
 └── assets/                     ← portada
 ```
 

@@ -1,0 +1,12 @@
+{
+  "name": "examen-de-bots",
+  "description": "Le hace a tu chatbot un examen con preguntas reales, lo califica con un número y te avisa si empeora al cambiar el prompt, el modelo o su información.",
+  "version": "1.0.0",
+  "author": {
+    "name": "lomasys"
+  },
+  "homepage": "https://github.com/lomasys/skills",
+  "repository": "https://github.com/lomasys/skills",
+  "license": "Apache-2.0",
+  "keywords": ["chatbot", "evals", "examen", "alucinaciones", "llm", "regresion", "espanol"]
+}

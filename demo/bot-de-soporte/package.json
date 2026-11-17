@@ -1,0 +1,9 @@
+{
+  "name": "bot-de-soporte",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chatbot de práctica con fallas a propósito, para probar la skill examen-de-bots. No usa IA ni claves.",
+  "scripts": {
+    "start": "node bot.js"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "producto": "Tablerito, tableros de tareas para equipos pequeños",
+  "planes": {
+    "basico": { "precio": "$9 dólares al mes por usuario", "limite": "3 tableros" },
+    "pro": { "precio": "$19 dólares al mes por usuario", "limite": "tableros ilimitados" },
+    "empresa": { "precio": "a cotizar con ventas (no hay precio público)" }
+  },
+  "reembolsos": "Dentro de los primeros 30 días después de la compra, sin preguntas.",
+  "soporte": { "horario": "de lunes a viernes, de 9:00 a 18:00 (hora de Ciudad de México)", "correo": "soporte@tablerito.test" },
+  "funciones": ["exportar tableros a Excel y CSV", "comentarios", "etiquetas", "fechas de entrega"],
+  "integraciones": ["Slack", "Google Calendar"],
+  "no_existe": ["integración con Salesforce", "integración con SAP", "app de escritorio"]
+}

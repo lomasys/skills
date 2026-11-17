@@ -12,6 +12,14 @@
       "version": "1.0.0",
       "category": "security",
       "keywords": ["seguridad", "security", "multi-tenant", "soc2", "iso27001", "pentest", "espanol"]
+    },
+    {
+      "name": "examen-de-bots",
+      "source": "./plugins/examen-de-bots",
+      "description": "Le hace a tu chatbot un examen con preguntas reales, lo califica con un número y te avisa si empeora al cambiar el prompt, el modelo o su información.",
+      "version": "1.0.0",
+      "category": "testing",
+      "keywords": ["chatbot", "evals", "examen", "alucinaciones", "llm", "regresion", "espanol"]
     }
   ]
 }
